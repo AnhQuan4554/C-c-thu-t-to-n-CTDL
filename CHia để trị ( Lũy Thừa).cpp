@@ -3,6 +3,7 @@ using namespace std;
 const long long modu = 1e9+7;
 long long Luy_thua(long long a, long long b) {
 	long long result = 1;
+	if(b==0)return 1;
 	while (b) {
 		if (b % 2 == 1) {
 			result *= a;
