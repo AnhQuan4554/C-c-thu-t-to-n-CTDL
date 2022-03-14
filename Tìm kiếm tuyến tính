@@ -1,34 +1,37 @@
-#include<iostream>
+﻿#include<iostream>
 using namespace std;
-void input(int* a, int n) {
-	for (int i = 0; i < n; i++) {
-		cin >> a[i];
-	}
-}
+
 int find(int* a, int n, int x) {
 	int left = 0, right = n - 1;
 	while (left <= right) {
-	int mid = (left + right) / 2;
+		int mid = (left + right) / 2;
 		if (a[mid] == x) {
 			return mid;
 		}
-		else if (a[mid] < x) {
+		else if (a[mid] > x) {
 			right = mid - 1;
 		}
-		else if (a[mid] > x) {
-			left = mid +1 ;
+		else if (a[mid] < x) {
+			left = mid + 1;
 		}
 	}
 	return -1;
 }
 int main() {
-	int a[1000];
-	int n; cin >> n;
-	int x; cin >> x;
-	input(a, n);
-	
-	
-	cout << find(a, n, x);
-	return 0;
-	system("pause");
+	int t; cin >> t;
+	while (t--) {
+		int a[100001];
+		int n, k; cin >> n >> k;
+		for (int i = 0; i < n; i++) {
+			cin >> a[i];
+		}
+		if (find(a, n, k) == -1) {
+			cout << "NO";
+		}
+		else {
+			cout << find(a, n, k)+1;
+		}
+		cout << endl;
+	}
+
 }
