@@ -36,7 +36,7 @@ void Try(int i, int* c,vector<pair<int,string>>&b, int n,int k) {
 int main() {
 		int n,k; cin >> n>>k  ;
 		set<string>b;
-		vector<pair<int, string>>a(n);
+		vector<pair<int, string>>a(n);//chả qua cái số lượng không phải là n thôi 
 		input(b, a, n);
 		int* c = new int[n];
 		khoitao(c, k);
